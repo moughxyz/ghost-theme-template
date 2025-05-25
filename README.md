@@ -1,65 +1,37 @@
-# Source
+# Minimal Ghost Theme Template
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Source! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Source/releases) page.
+A barebones, minimal Ghost theme template designed to be used as a starting point for LLM-assisted theme development.
 
-&nbsp;
+## Features
 
-# First time using a Ghost theme?
+- Minimal HTML structure with no styling
+- Essential Ghost theme functionality
+- Clean, semantic markup
+- All necessary template files for a complete Ghost theme
 
-Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
+## Template Files
 
-This theme has lots of code comments to help explain what's going on just by reading the code. Once you feel comfortable with how everything works, we also have full [theme API documentation](https://ghost.org/docs/themes/) which explains every possible Handlebars helper and template.
+- `default.hbs` - Main layout template
+- `index.hbs` - Homepage template
+- `home.hbs` - Alternative homepage template
+- `post.hbs` - Individual post template
+- `page.hbs` - Static page template
+- `tag.hbs` - Tag archive template
+- `author.hbs` - Author archive template
 
-**The main files are:**
+## Partials
 
-- `default.hbs` - The parent template file, which includes your global header/footer
-- `home.hbs` - The homepage
-- `index.hbs` - The main template to generate a list of posts
-- `post.hbs` - The template used to render individual posts
-- `page.hbs` - Used for individual pages
-- `tag.hbs` - Used for tag archives, eg. "all posts tagged with `news`"
-- `author.hbs` - Used for author archives, eg. "all posts written by Jamie"
+- `partials/components/navigation.hbs` - Site navigation
+- `partials/components/footer.hbs` - Site footer
+- `partials/components/header.hbs` - Page header
+- `partials/components/header-content.hbs` - Header content
+- `partials/components/post-list.hbs` - Post listing
+- `partials/post-card.hbs` - Individual post card
 
-One neat trick is that you can also create custom one-off templates by adding the slug of a page to a template file. For example:
+## Usage
 
-- `page-about.hbs` - Custom template for an `/about/` page
-- `tag-news.hbs` - Custom template for `/tag/news/` archive
-- `author-ali.hbs` - Custom template for `/author/ali/` archive
+This theme provides the bare minimum structure needed for a Ghost theme. It displays all content without any styling, making it perfect as a starting point for custom theme development.
 
+## License
 
-# Development
-
-Source styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
-
-```bash
-# install dependencies
-yarn install
-
-# run development server
-yarn dev
-```
-
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
-
-The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
-
-```bash
-# create .zip file
-yarn zip
-```
-
-# PostCSS Features Used
-
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-
-
-# SVG Icons
-
-Source uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
-
-You can add your own SVG icons in the same manner.
-
-
-# Copyright & License
-
-Copyright (c) 2013-2025 Ghost Foundation - Released under the [MIT license](LICENSE).
+MIT
